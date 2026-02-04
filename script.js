@@ -23,10 +23,11 @@
        condition: {
         text: day.day.condition.text,
         icon: day.day.condition.icon
-       }
+       },
+       humidity: day.day.avghumidity,
+       wind: day.day.maxwind_kph
       }));
-      
-      
+    
       
       const formattedDate = dayjs(data.forecast.forecastday[0].date).format('ddd, D MMM');
 
@@ -59,6 +60,8 @@
 
   if(weather) {
    renderWeatherHTML(weather);
+   renderWeatherForecastHTML(weather);
+   renderForecastInfoHTML(weather);
   } else {
     alert('City not found! Please enter a valid city.');
   }
@@ -92,12 +95,9 @@
   function renderWeatherHTML (weather) {
 
     let newWeatherCard = '';
-    let newForecastCards = '';
- 
-    
     const weatherCard = document.querySelector('.js-weather-card');
-    const forecastCard = document.querySelector('.js-card-container');
-    
+   
+
     newWeatherCard += ` 
         <div class="weather-card">
         <div class="container">
@@ -120,6 +120,15 @@
       </div>
       `
   weatherCard.innerHTML = newWeatherCard;
+   
+   
+  }
+
+
+  function renderWeatherForecastHTML (weather) {
+    
+    let newForecastCards = '';
+    const forecastCard = document.querySelector('.js-card-container');
    
    newForecastCards+= `
      <div class="card">
@@ -157,6 +166,16 @@
     forecastCard.innerHTML = newForecastCards
   }
 
+  function renderForecastInfoHTML(weather) {
+      
+    const forecastCards = document.querySelectorAll('.card');
+
+    forecastCards.forEach((card) => {
+    card.addEventListener('click', () => {
+    console.log('im a card');
+    })
+    });
+  }
 
   loadLastCity();
   searchCity();

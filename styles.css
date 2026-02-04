@@ -154,6 +154,7 @@ body::after {
   -webkit-backdrop-filter: blur(10px); 
   border-radius: 16px;
   padding: 20px;
+  cursor: pointer;
 }
 
 .card h1 {
