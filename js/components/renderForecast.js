@@ -3,9 +3,9 @@ import { renderWeatherHTML } from "./renderWeather.js";
 
   export function renderWeatherForecastHTML (weather) {
     
-    const forecastCard = document.querySelector('.js-card-container');
+    const forecastInfo = document.querySelector('.forecast-info');
 
-    forecastCard.innerHTML = weather.weekForecast.slice(1).map((day,index) => 
+    forecastInfo.innerHTML = weather.weekForecast.slice(1).map((day,index) => 
       `
      <div class = "card" data-index = "${index + 1}">
      <h1>${day.day}</h1>

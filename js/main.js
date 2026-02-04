@@ -2,15 +2,25 @@
   import { renderWeatherHTML } from './components/renderWeather.js';
   import { renderWeatherForecastHTML, renderForecastInfoHTML } from './components/renderForecast.js';
   import { renderDefaultPage } from './components/renderDefault.js';
+  import { getHour, updateTheme } from './utils/dateUtils.js';
 
 
   async function showWeather (city) {
   const weather = await fetchWeather(city);
 
+
   if(weather) {
    renderWeatherHTML(weather);
    renderWeatherForecastHTML(weather);
    renderForecastInfoHTML(weather);
+
+   const forecastContainer = document.querySelector('.forecast-container');
+   const mainContainer = document.querySelector('.main-container');
+
+
+   forecastContainer.classList.remove('hideForecast');
+   mainContainer.classList.remove('centered');
+
   } else {
     alert('City not found! Please enter a valid city.');
   }
@@ -60,6 +70,10 @@
       showWeather(lastCity);
     }
   }
+  
+  const hour = getHour();
+   updateTheme(hour);
 
   loadLastCity();
   searchCity();
+  renderDefaultPage();

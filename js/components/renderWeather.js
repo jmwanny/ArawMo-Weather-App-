@@ -24,6 +24,9 @@
         <p class="temperature js-city-temp">${data.temp ?? data.avgTemp} °C</p>
         <p class="condition js-city-condition">${data.condition.text}
         </div>
+        <div class = "air-condition-container">
+         <h1 class = "title">AIR CONDITIONS</h1>
+         <div class = "air-condition">
           <div class = "humidity-container">
             <span>Humidity</span>
             <p class = "js-city-humidity">${data.humidity}%</p>
@@ -32,6 +35,8 @@
             <span>Wind</span>
             <p class = "js-city-wind">${data.wind} km/h</p>
           </div>
+          </div>
+        </div>
       </div>
   `
    

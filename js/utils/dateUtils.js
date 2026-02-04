@@ -7,3 +7,21 @@ export function formatShortDate (date) {
 export function formatLongDate (date) {
   return dayjs(date).format('ddd, D MMM');
 }
+
+
+export function getHour ()  {
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  return currentHour;
+}
+
+export function updateTheme(hour) {
+    if(hour >= 6 && hour < 18) {
+        document.body.classList.add('day');
+        document.body.classList.remove('night');
+    } else {
+        document.body.classList.add('night');
+        document.body.classList.remove('day');
+    }
+}
