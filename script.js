@@ -79,11 +79,34 @@
       localStorage.setItem('lastCity', city);
     } else {
       alert('Please enter a city name!')
+      localStorage.clear();
+      renderDefaultPage();
+      
     }
+  
   });
-   
-  }
 
+
+
+   input.addEventListener('keydown', (event) => {
+    
+    if(event.key === 'Enter') {
+    const city = input.value.trim();
+    if(city) {
+      showWeather(city);
+      localStorage.setItem('lastCity', city);
+    } else {
+      alert('Please enter a city name!')
+      localStorage.clear();
+      renderDefaultPage();
+      
+    }
+  }
+});
+
+}
+   
+  
   function loadLastCity() {
     const lastCity = localStorage.getItem('lastCity');
     
@@ -92,89 +115,109 @@
     }
   }
 
-  function renderWeatherHTML (weather) {
+  function renderWeatherHTML (weather, dayData = null) {
+    
+  const data = dayData || {
+    day: weather.day,
+    temp: weather.temp,
+    condition: weather.condition,
+    humidity: weather.humidity,
+    wind: weather.wind
+  }
 
-    let newWeatherCard = '';
+
     const weatherCard = document.querySelector('.js-weather-card');
    
 
-    newWeatherCard += ` 
+    weatherCard.innerHTML = ` 
         <div class="weather-card">
         <div class="container">
         <h2 class="city js-city-name">${weather.city}</h2>
-        <h2 class="city js-city-date">${weather.day}</h2>
-        <img src = "${weather.condition.icon}" alt = "${weather.condition.text}"/>
+        <h2 class="city js-city-date">${data.day}</h2>
+        <img src = "${data.condition.icon}" alt = "${data.condition.text}"/>
 
         <div class = "weather-condition">
-        <p class="temperature js-city-temp">${weather.temp} °C</p>
-        <p class="condition js-city-condition">${weather.condition.text}
+        <p class="temperature js-city-temp">${data.temp ?? data.avgTemp} °C</p>
+        <p class="condition js-city-condition">${data.condition.text}
         </div>
           <div class = "humidity-container">
             <span>Humidity</span>
-            <p class = "js-city-humidity">${weather.humidity}%</p>
+            <p class = "js-city-humidity">${data.humidity}%</p>
           </div>
           <div class ="wind-container">
             <span>Wind</span>
-            <p class = "js-city-wind">${weather.wind} km/h</p>
+            <p class = "js-city-wind">${data.wind} km/h</p>
           </div>
       </div>
-      `
-  weatherCard.innerHTML = newWeatherCard;
-   
+  `
    
   }
 
 
   function renderWeatherForecastHTML (weather) {
     
-    let newForecastCards = '';
     const forecastCard = document.querySelector('.js-card-container');
-   
-   newForecastCards+= `
-     <div class="card">
-      <h1>${weather.weekForecast[1].day}</h1>
-      <img src="${weather.weekForecast[1].condition.icon}" alt="${weather.weekForecast[1].day}">
-      <p>${weather.weekForecast[1].avgTemp} °C</p>
-      </div>
-      <div class="card">
-         <h1>${weather.weekForecast[2].day}</h1>
-      <img src="${weather.weekForecast[2].condition.icon}" alt="${weather.weekForecast[2].day}">
-      <p>${weather.weekForecast[2].avgTemp} °C</p>
-      </div>
-       <div class="card">
-         <h1>${weather.weekForecast[3].day}</h1>
-      <img src="${weather.weekForecast[3].condition.icon}" alt="${weather.weekForecast[3].day}">
-      <p>${weather.weekForecast[3].avgTemp} °C</p>
-      </div>
-       <div class="card">
-         <h1>${weather.weekForecast[4].day}</h1>
-      <img src="${weather.weekForecast[4].condition.icon}" alt="${weather.weekForecast[4].day}">
-      <p>${weather.weekForecast[4].avgTemp} °C</p>
-      </div>
-       <div class="card">
-         <h1>${weather.weekForecast[5].day}</h1>
-      <img src="${weather.weekForecast[5].condition.icon}" alt="${weather.weekForecast[5].day}">
-      <p>${weather.weekForecast[5].avgTemp} °C</p>
-      </div>
-       <div class="card">
-         <h1>${weather.weekForecast[6].day}</h1>
-      <img src="${weather.weekForecast[6].condition.icon}" alt="${weather.weekForecast[6].day}">
-      <p>${weather.weekForecast[6].avgTemp} °C</p>
-      </div>
-    </div>`
 
-    forecastCard.innerHTML = newForecastCards
+    forecastCard.innerHTML = weather.weekForecast.slice(1).map((day,index) => 
+      `
+     <div class = "card" data-index = "${index + 1}">
+     <h1>${day.day}</h1>
+     <img src = "${day.condition.icon}" alt = "${day.condition.text}">
+     <p>${day.avgTemp} °C</p>
+    </div>
+     `).join('');
+    
   }
 
   function renderForecastInfoHTML(weather) {
-      
+    
     const forecastCards = document.querySelectorAll('.card');
 
+   
     forecastCards.forEach((card) => {
     card.addEventListener('click', () => {
-    console.log('im a card');
+    
+      const index = Number(card.dataset.index);
+      const selectedDay = weather.weekForecast[index];
+
+      renderWeatherHTML(weather, {
+        day: dayjs(selectedDay.day).format('dddd, d MMM'),
+        avgTemp: selectedDay.avgTemp,
+        condition: selectedDay.condition,
+        humidity: selectedDay.humidity,
+        wind: selectedDay.wind
+      });
+
+      setTimeout(() => {
+        renderWeatherHTML(weather);
+      }, 3000);
+     
     })
     });
+  }
+
+  function renderDefaultPage() {
+    const page = document.querySelector('.app');
+
+    page.innerHTML = `
+    <div class="search">
+      <input class="js-search-data" type="text" placeholder="Search city..." />
+      <button class="js-search"><img class = "search-icon" src = "images/search-icon.png" alt="Search icon"></button>
+    </div>
+
+    <div class="weather-card js-weather-card">
+      <div class="landing-page">
+        <img class="logo" src="images/searching.png" alt="Searching logo">
+        <h1>Search City</h1>
+        <p>Find out the weather conditions of the city.</p>
+      </div>
+    </div>
+    <div class="js-card-container">
+
+    </div>
+    `
+
+    searchCity();
   }
 
   loadLastCity();
