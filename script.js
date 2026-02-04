@@ -18,7 +18,7 @@
       
             
       const weekForecast = data.forecast.forecastday.map((day) => ({
-       day: dayjs(day.date).format('MMMM D'),
+       day: dayjs(day.date).format('MMM D'),
        avgTemp: day.day.avgtemp_c,
        condition: {
         text: day.day.condition.text,
@@ -28,7 +28,7 @@
       
       
       
-      const formattedDate = dayjs(data.forecast.forecastday[0].date).format('MMMM MM');
+      const formattedDate = dayjs(data.forecast.forecastday[0].date).format('ddd, D MMM');
 
       const weather = {
       city: data.location.name,
@@ -97,7 +97,7 @@
     
     const weatherCard = document.querySelector('.js-weather-card');
     const forecastCard = document.querySelector('.js-card-container');
-
+    
     newWeatherCard += ` 
         <div class="weather-card">
         <div class="container">
@@ -106,7 +106,7 @@
         <img src = "${weather.condition.icon}" alt = "${weather.condition.text}"/>
 
         <div class = "weather-condition">
-        <p class="temperature js-city-temp">${weather.temp}°C</p>
+        <p class="temperature js-city-temp">${weather.temp} °C</p>
         <p class="condition js-city-condition">${weather.condition.text}
         </div>
           <div class = "humidity-container">
@@ -125,32 +125,32 @@
      <div class="card">
       <h1>${weather.weekForecast[1].day}</h1>
       <img src="${weather.weekForecast[1].condition.icon}" alt="${weather.weekForecast[1].day}">
-      <p>${weather.weekForecast[1].avgTemp} C</p>
+      <p>${weather.weekForecast[1].avgTemp} °C</p>
       </div>
       <div class="card">
          <h1>${weather.weekForecast[2].day}</h1>
       <img src="${weather.weekForecast[2].condition.icon}" alt="${weather.weekForecast[2].day}">
-      <p>${weather.weekForecast[2].avgTemp} C</p>
+      <p>${weather.weekForecast[2].avgTemp} °C</p>
       </div>
        <div class="card">
          <h1>${weather.weekForecast[3].day}</h1>
       <img src="${weather.weekForecast[3].condition.icon}" alt="${weather.weekForecast[3].day}">
-      <p>${weather.weekForecast[3].avgTemp}</p>
+      <p>${weather.weekForecast[3].avgTemp} °C</p>
       </div>
        <div class="card">
          <h1>${weather.weekForecast[4].day}</h1>
       <img src="${weather.weekForecast[4].condition.icon}" alt="${weather.weekForecast[4].day}">
-      <p>${weather.weekForecast[4].avgTemp}</p>
+      <p>${weather.weekForecast[4].avgTemp} °C</p>
       </div>
        <div class="card">
          <h1>${weather.weekForecast[5].day}</h1>
       <img src="${weather.weekForecast[5].condition.icon}" alt="${weather.weekForecast[5].day}">
-      <p>${weather.weekForecast[5].avgTemp}</p>
+      <p>${weather.weekForecast[5].avgTemp} °C</p>
       </div>
        <div class="card">
          <h1>${weather.weekForecast[6].day}</h1>
       <img src="${weather.weekForecast[6].condition.icon}" alt="${weather.weekForecast[6].day}">
-      <p>${weather.weekForecast[6].avgTemp}</p>
+      <p>${weather.weekForecast[6].avgTemp} °C</p>
       </div>
     </div>`
 
