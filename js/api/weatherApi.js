@@ -14,6 +14,7 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
       if(data.error) {
         return null;
       }
+
       
             
       const weekForecast = data.forecast.forecastday.map((day) => ({
@@ -26,7 +27,26 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
        humidity: day.day.avghumidity,
        wind: day.day.maxwind_kph
       }));
-    
+
+      const every3HourForecast = [
+
+      ]
+
+      
+
+      const hours = data.forecast.forecastday[0].hour;
+      
+      for(let i=0; i<hours.length; i+=3) {
+      every3HourForecast.push({
+        time: hours[i].time,
+        temp: hours[i].temp_c,
+        condition: {
+          text: hours[i].condition.text,
+          icon: hours[i].condition.icon
+        }
+      });
+      }
+      
   
       const weather = {
       city: data.location.name,
@@ -38,7 +58,8 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
       },
       humidity: data.current.humidity,
       wind: data.current.wind_kph,
-      weekForecast
+      weekForecast,
+      every3HourForecast
       }
       
       return weather;

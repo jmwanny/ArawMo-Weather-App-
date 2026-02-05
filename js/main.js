@@ -3,6 +3,7 @@
   import { renderWeatherForecastHTML, renderForecastInfoHTML } from './components/renderForecast.js';
   import { renderDefaultPage } from './components/renderDefault.js';
   import { getHour, updateTheme } from './utils/dateUtils.js';
+  import { renderHourlyForecastHTML } from './components/renderHourlyForecast.js';
 
 
   async function showWeather (city) {
@@ -13,6 +14,8 @@
    renderWeatherHTML(weather);
    renderWeatherForecastHTML(weather);
    renderForecastInfoHTML(weather);
+   renderHourlyForecastHTML(weather);
+  
 
    const forecastContainer = document.querySelector('.forecast-container');
    const mainContainer = document.querySelector('.main-container');
@@ -24,6 +27,10 @@
   } else {
     alert('City not found! Please enter a valid city.');
   }
+
+    console.log(weather);
+    console.log(weather.every3HourForecast);
+
   }
 
 
@@ -40,7 +47,7 @@
       alert('Please enter a city name!')
       localStorage.clear();
       renderDefaultPage();
-      
+    
     }
   
   });
@@ -73,7 +80,9 @@
   
   const hour = getHour();
    updateTheme(hour);
-
-  loadLastCity();
-  searchCity();
+  
   renderDefaultPage();
+  searchCity();
+  loadLastCity();
+
+  
