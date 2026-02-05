@@ -302,6 +302,18 @@ body.night .moon {
 .js-city-humidity, .js-city-wind {
   font-weight: bold;
 }
+.humidity-container, .wind-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.humidity-logo, .wind-logo{
+  color: white;
+  font-size: 30px;
+  margin: auto;
+  margin-right: 15px;
+}
 
 .condition {
   margin-bottom: 15px;

@@ -28,12 +28,20 @@
          <h1 class = "title">AIR CONDITIONS</h1>
          <div class = "air-condition">
           <div class = "humidity-container">
+            
+            <i class="fa-solid fa-droplet humidity-logo"></i>
+            <div>
             <span>Humidity</span>
             <p class = "js-city-humidity">${data.humidity}%</p>
+            </div>
           </div>
           <div class ="wind-container">
+            
+            <i class="fa-solid fa-wind wind-logo"></i>
+            <div>
             <span>Wind</span>
             <p class = "js-city-wind">${data.wind} km/h</p>
+            </div>
           </div>
           </div>
         </div>
