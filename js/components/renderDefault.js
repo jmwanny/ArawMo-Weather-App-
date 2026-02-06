@@ -1,4 +1,5 @@
  import {searchCity} from '../main.js'
+ import { hideForecastSections } from './uiHelpers.js';
 
   export function renderDefaultPage() {
     const page = document.querySelector('.app');
@@ -20,7 +21,10 @@
        
     </div>
      <div class = "hourly-forecast-container">
-      
+      <h1 class="title">TODAY'S FORECAST</h1>
+       <div class = "hourly-forecast-info">
+        
+      </div>
     </div>
     
    </div>
@@ -37,10 +41,7 @@
     </div>
     </div>
     `
-    const forecastContainer = document.querySelector('.forecast-container');
-    const outerContainer = document.querySelector('.outer-container');
-    outerContainer.classList.add('centered');
-    forecastContainer.classList.add('hideForecast');
 
+    hideForecastSections();
     searchCity();
   }

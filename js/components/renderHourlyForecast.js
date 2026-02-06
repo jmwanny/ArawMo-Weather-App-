@@ -2,13 +2,14 @@
 
 export function renderHourlyForecastHTML (weather)  {
   
-const hourlyForecastContainer = document.querySelector('.hourly-forecast-container');
+const hourlyForecastInfo = document.querySelector('.hourly-forecast-info');
 
 
 
- hourlyForecastContainer.innerHTML = weather.every3HourForecast.map((hour, index) => 
+ hourlyForecastInfo.innerHTML = weather.every3HourForecast.map((hour, index) => 
    
-  `  <div class = "card" data-index = "${index}">
+  `  
+    <div class = "hourly-forecast-cards" data-index = "${index}">
      <h1>${hour.time}</h1>
      <img src = "${hour.condition.icon}" alt = "${hour.condition.text}">
      <p>${hour.temp} °C</p>

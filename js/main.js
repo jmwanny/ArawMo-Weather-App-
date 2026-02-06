@@ -4,6 +4,7 @@
   import { renderDefaultPage } from './components/renderDefault.js';
   import { getHour, updateTheme } from './utils/dateUtils.js';
   import { renderHourlyForecastHTML } from './components/renderHourlyForecast.js';
+  import { showForecastSections } from './components/uiHelpers.js';
 
 
   async function showWeather (city) {
@@ -15,14 +16,9 @@
    renderWeatherForecastHTML(weather);
    renderForecastInfoHTML(weather);
    renderHourlyForecastHTML(weather);
-  
 
-   const forecastContainer = document.querySelector('.forecast-container');
-   const mainContainer = document.querySelector('.main-container');
+   showForecastSections();
 
-
-   forecastContainer.classList.remove('hideForecast');
-   mainContainer.classList.remove('centered');
 
   } else {
     alert('City not found! Please enter a valid city.');

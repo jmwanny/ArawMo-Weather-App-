@@ -7,7 +7,7 @@ import { renderWeatherHTML } from "./renderWeather.js";
 
     forecastInfo.innerHTML = weather.weekForecast.slice(1).map((day,index) => 
       `
-     <div class = "card" data-index = "${index + 1}">
+     <div class = "day-forecast-cards" data-index = "${index + 1}">
      <h1>${day.day}</h1>
      <img src = "${day.condition.icon}" alt = "${day.condition.text}">
      <p>${day.avgTemp} °C</p>
@@ -21,7 +21,7 @@ import { renderWeatherHTML } from "./renderWeather.js";
 
   export function renderForecastInfoHTML(weather) {
     
-    const forecastCards = document.querySelectorAll('.card');
+    const forecastCards = document.querySelectorAll('.day-forecast-cards');
 
     forecastCards.forEach((card) => {
     card.addEventListener('click', () => {

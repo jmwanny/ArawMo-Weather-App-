@@ -1,4 +1,4 @@
-import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
+import { formatShortDate, formatLongDate, formatTime } from "../utils/dateUtils.js";
 
    export async function fetchWeather(city) {
     const API_KEY = '35d44bd2af4c4574b0c74804260202';
@@ -14,8 +14,6 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
       if(data.error) {
         return null;
       }
-
-      
             
       const weekForecast = data.forecast.forecastday.map((day) => ({
        day: formatShortDate(day.date),
@@ -32,13 +30,11 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
 
       ]
 
-      
-
       const hours = data.forecast.forecastday[0].hour;
       
       for(let i=0; i<hours.length; i+=3) {
       every3HourForecast.push({
-        time: hours[i].time,
+        time: formatTime(hours[i].time),
         temp: hours[i].temp_c,
         condition: {
           text: hours[i].condition.text,
@@ -47,7 +43,6 @@ import { formatShortDate, formatLongDate } from "../utils/dateUtils.js";
       });
       }
       
-  
       const weather = {
       city: data.location.name,
       day: formatLongDate(data.day),

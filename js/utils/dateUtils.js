@@ -25,3 +25,10 @@ export function updateTheme(hour) {
         document.body.classList.remove('day');
     }
 }
+
+
+export function formatTime (date) {
+ 
+  return dayjs(date).format("HH:mm");
+
+}
