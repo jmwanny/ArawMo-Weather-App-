@@ -1,0 +1,64 @@
+
+body {
+  min-height: 100vh;
+  background-image: url('images/weather-bg.jpg');
+  background-position: 50% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.outer-container {
+ display: flex;
+ width: 100%;
+ justify-content: space-around;
+ flex-direction: row;
+
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(49, 46, 46, 0.25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.inner-container{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+
+}
+
+.humidity-container, .wind-container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.outer-container.expanded {
+  gap: 60px;       
+}
+
+.hourly-forecast-container {
+ background:rgba(145, 138, 138, 0.301);
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ align-items: center;
+ width:350px;
+}
+
+
+.details {
+  display: flex;
+  justify-content: space-around;
+}
+

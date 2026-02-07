@@ -1,0 +1,11 @@
+.humidity-logo, .wind-logo{
+  color: white;
+  font-size: 30px;
+  margin: auto;
+  margin-right: 15px;
+}
+
+.logo {
+  width: 200px;
+  height:200px;
+}

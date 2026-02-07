@@ -1,0 +1,102 @@
+
+body.night {
+  background: radial-gradient(
+    circle at top,
+    #1b2735 0%,
+    #090a0f 100%
+  );
+  overflow: hidden;
+}
+
+body.night::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, white 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 80%, white 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 60%, white 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 20%, white 50%, transparent 51%),
+    radial-gradient(1px 1px at 10% 90%, white 50%, transparent 51%);
+  animation: twinkle 4s infinite alternate;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+body.night::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -30%;
+  width: 160px;
+  height: 2px;
+  background: linear-gradient(90deg, white, transparent);
+  opacity: 0;
+  animation: shootingStar 7s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translate(0, 0) rotate(20deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    transform: translate(120vw, 60vh) rotate(20deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.moon {
+  position: fixed;
+  top: 8%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffffff,
+    #e6e6e6 60%,
+    #cfcfcf 100%
+  );
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 60px rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.night .moon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.day .moon {
+  opacity: 0;
+}
+
+body.night .moon {
+  animation: moonFloat 6s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}

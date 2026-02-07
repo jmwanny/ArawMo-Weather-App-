@@ -1,0 +1,10 @@
+.not-clickable {
+  pointer-events: none; 
+  opacity: 0.6;         
+  cursor: default;     
+}
+
+.hideForecast {
+  display: none;
+}
+

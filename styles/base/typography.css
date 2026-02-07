@@ -1,0 +1,59 @@
+body {
+  min-height: 100vh;
+  background-image: url('images/weather-bg.jpg');
+  background-position: 50% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+
+.greeting-title, .question {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.city {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.temperature {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.title {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.js-city-humidity, .js-city-wind {
+  font-weight: bold;
+}
+
+.details div span {
+  font-size: 12px;
+  color: #888;
+}
+
+.details div p {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+
+.title {
+ color: rgba(194, 183, 183, 0.486);
+ font-size: 13px;
+ font-weight: 700;
+ text-align: start;
+ width: 100%;
+ padding:6px
+}

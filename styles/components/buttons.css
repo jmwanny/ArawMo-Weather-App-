@@ -1,0 +1,16 @@
+
+.submit-btn, .go-btn {
+ all:unset;
+ background-color: rgb(214, 143, 10);
+ padding: 10px 30px;
+ border-radius: 10px;
+ color: white;
+ font-weight: bold;
+ cursor: pointer;
+ transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover, .go-btn:hover {
+   background-color: rgb(170, 115, 12);
+ 
+}
