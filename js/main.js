@@ -4,7 +4,8 @@
   import { renderDefaultPage } from './components/renderDefault.js';
   import { getHour, updateTheme } from './utils/dateUtils.js';
   import { renderHourlyForecastHTML } from './components/renderHourlyForecast.js';
-  import { showForecastSections } from './components/uiHelpers.js';
+  import { showForecastSections,showGreetingSections } from './components/uiHelpers.js';
+  import { renderQuestionHTML} from './components/renderGreetings.js';
 
 
   async function showWeather (city) {
@@ -78,6 +79,10 @@
    updateTheme(hour);
   
   renderDefaultPage();
+  setTimeout(() => {
+    showGreetingSections();
+    renderQuestionHTML()
+  },300);
   searchCity();
   loadLastCity();
 

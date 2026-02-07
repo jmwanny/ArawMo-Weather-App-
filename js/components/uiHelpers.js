@@ -24,3 +24,19 @@ export function hideForecastSections () {
     outerContainer.classList.remove('expanded');
 
 }
+
+
+
+export function hideGreetingSections () {
+
+  let greetingsContainer = document.querySelector('.greetings');
+
+  greetingsContainer.style.display = 'none';
+}
+
+export function showGreetingSections () {
+
+  let greetingsContainer = document.querySelector('.greetings');
+
+  greetingsContainer.style.display = 'flex';
+}

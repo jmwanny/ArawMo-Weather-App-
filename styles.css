@@ -204,6 +204,74 @@ body.night .moon {
   100% { transform: translateY(0); }
 }
 
+.greetings{
+  background: rgba(66, 60, 60, 0.733); 
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  height: 200px;
+  position: absolute;
+  z-index: 2;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 10px;
+  gap: 20px;
+  color: white;
+}
+
+.greeting-title, .question {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.answer {
+  background: rgba(145, 138, 138, 0.171);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px); 
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+.answer:focus {
+  outline: none;
+  background: rgba(145, 138, 138, 0.336);
+}
+
+.submit-btn, .go-btn {
+ all:unset;
+ border: 3px solid rgb(214, 143, 10);
+ padding: 10px 30px;
+ border-radius: 10px;
+ color: white;
+ font-weight: bold;
+ cursor: pointer;
+ transition: all 0.3s ease;
+}
+
+.submit-btn:hover, .go-btn:hover {
+   background-color: rgb(214, 143, 10);
+ 
+}
+
+.greeting-text {
+  
+}
+
+.not-clickable {
+  pointer-events: none; 
+  opacity: 0.6;         
+  cursor: default;     
+}
 
 .app {
   background: rgb(17, 14, 26); 

@@ -16,7 +16,6 @@ import { renderWeatherHTML } from "./renderWeather.js";
     
   }
 
-
   let resetTimeout;
 
   export function renderForecastInfoHTML(weather) {
