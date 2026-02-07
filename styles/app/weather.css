@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 15px 30px;
+  padding: 15px 20px;
   position: relative;
   z-index: 1;
   
@@ -21,7 +21,6 @@
   width: 100%;
 }
 
-
 .condition {
   margin-bottom: 15px;
   display: flex;
@@ -29,3 +28,22 @@
   align-items: center;
   gap: 15px;
 }
+
+
+@media (min-width: 360px ) and (max-width: 767px) {
+ .app {
+    padding: 15px 10px;
+ }
+}
+
+/* ≥ 768px — tablets */
+@media (min-width: 768px) {}
+
+/* ≥ 1024px — small laptops */
+@media (min-width: 1024px) {}
+
+/* ≥ 1280px — desktops */
+@media (min-width: 1280px) {}
+
+/* ≥ 1440px — large screens */
+@media (min-width: 1440px) {}

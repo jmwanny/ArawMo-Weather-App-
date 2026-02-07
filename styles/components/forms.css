@@ -8,11 +8,11 @@
   -webkit-backdrop-filter: blur(10px); 
   border-radius: 10px;
   width: 100%;
+  padding: 10px;
 }
 
 .search input {
   flex: 1;
-  padding: 10px 20px;
   font-size: 12px;
   background:none;
   border:none;
@@ -29,7 +29,7 @@
 }
 
 .search button {
-  padding: 10px 15px;
+  padding: 0;
   border: none;
   border-radius: 8px;
   color: white;
@@ -53,9 +53,31 @@
   font-family: 'Poppins', sans-serif;
   padding: 5px 15px;
   transition: all 0.3s ease;
+  width: 100%;
+  max-width: 500px;
 }
 
 .answer:focus {
   outline: none;
   background: rgba(145, 138, 138, 0.336);
 }
+
+/* ≥ 360 — phones */
+@media (min-width: 360px ) and (max-width: 767px) {
+ .search {
+ 
+ }
+}
+
+/* ≥ 768px — tablets */
+@media (min-width: 768px) {}
+
+/* ≥ 1024px — small laptops */
+@media (min-width: 1024px) {}
+
+/* ≥ 1280px — desktops */
+@media (min-width: 1280px) {}
+
+/* ≥ 1440px — large screens */
+@media (min-width: 1440px) {}
+

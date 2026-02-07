@@ -2,15 +2,14 @@ import {hideGreetingSections } from "./uiHelpers.js";
 
 export function renderQuestionHTML ()  {
  let question = document.querySelector('.greetings');
- let searchBar = document.querySelector ('.js-search-data');
-
- searchBar.classList.add('not-clickable');
 
  question.innerHTML = 
  `
+ <div class = "greeting-card">
  <p class = "question"> Ano ang iyong pangalan? </p>
  <input type ="text" class = "answer" placeholder = "Your name here..."> 
  <button class = "submit-btn" value = "submit"> Submit</submit>
+ </div>
  `
  
  let input = document.querySelector('.answer');
@@ -37,20 +36,19 @@ function renderGreetingsHTML (name) {
   
   let greetings = document.querySelector('.greetings');
 
-   let searchBar = document.querySelector ('.js-search-data');
-
   greetings.innerHTML = `
    
+  <div class = "greeting-card">
   <h1 class = "greeting-title"> Magandang araw, ${name}!</h1>
   <p class = "greeting-text" >Alamin ang lagay
   ng ArawMo!</p>
   <button class = "go-btn">Search Now!</button>
+  </div>
   `;
 
   let button = document.querySelector('.go-btn');
 
   button.addEventListener('click', () => {
     hideGreetingSections();
-    searchBar.classList.remove('not-clickable');
   });
 }

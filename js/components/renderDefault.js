@@ -15,8 +15,8 @@
     <div class="weather-card js-weather-card">
       <div class="landing-page">
         <img class="logo" src="images/searching.png" alt="Searching logo">
-        <h1>Search City</h1>
-        <p>Find out the weather conditions of the city.</p>
+        <h1 class = "landing-page-header">Search City</h1>
+        <p class = "landing-page-text">Find out the weather conditions of the city.</p>
       </div>
        
     </div>
