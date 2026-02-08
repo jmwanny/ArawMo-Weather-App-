@@ -6,12 +6,13 @@ export function renderQuestionHTML ()  {
 
  question.innerHTML = 
  `
- <div class = "greeting-card">
+ <div class = "greeting-card" data-aos = "zoom-in">
  <p class = "question"> Ano ang iyong pangalan? </p>
  <input type ="text" class = "answer" placeholder = "Your name here..."> 
  <button class = "submit-btn" value = "submit"> Submit</submit>
  </div>
  `
+
  
  let input = document.querySelector('.answer');
  let button = document.querySelector('.submit-btn');
@@ -39,14 +40,13 @@ function renderGreetingsHTML (name) {
 
   greetings.innerHTML = `
    
-  <div class = "greeting-card">
+  <div class = "greeting-card" data-aos = "zoom-in">
   <h1 class = "greeting-title"> Magandang araw, ${name}!</h1>
   <p class = "greeting-text" >Alamin ang lagay
   ng ArawMo!</p>
   <button class = "go-btn">Search Now!</button>
   </div>
   `;
-
   let button = document.querySelector('.go-btn');
 
   button.addEventListener('click', () => {
