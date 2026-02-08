@@ -3,7 +3,7 @@ import { formatShortDate, formatLongDate, formatTime } from "../utils/dateUtils.
    export async function fetchWeather(city) {
     const API_KEY = '35d44bd2af4c4574b0c74804260202';
     const days = 7;
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=${days}`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=${days}`;
     
     try {
       const response = await fetch(url);
