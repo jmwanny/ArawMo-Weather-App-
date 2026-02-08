@@ -6,6 +6,7 @@
   import { renderHourlyForecastHTML } from './components/renderHourlyForecast.js';
   import { showForecastSections,showGreetingSections } from './components/uiHelpers.js';
   import { renderQuestionHTML} from './components/renderGreetings.js';
+  import { initBackgroundMusic } from '../music/music.js';
 
 
   async function showWeather (city) {
@@ -79,6 +80,7 @@
    updateTheme(hour);
   
   renderDefaultPage();
+  initBackgroundMusic();
   setTimeout(() => {
     showGreetingSections();
     renderQuestionHTML()

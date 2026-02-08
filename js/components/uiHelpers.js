@@ -40,3 +40,6 @@ export function showGreetingSections () {
 
   greetingsContainer.style.display = 'flex';
 }
+
+
+

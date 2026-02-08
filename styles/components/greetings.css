@@ -1,4 +1,3 @@
-
 .greetings{
   background: rgba(0, 0, 0, 0.733); 
   backdrop-filter: blur(10px) saturate(150%);
@@ -30,9 +29,7 @@
 
 /* ≥ 360px — phones */
 @media (min-width: 360px ) and (max-width: 767px) {
-  .greeting-card{
  
-  }
 }
 
 /* ≥ 768px — tablets */
