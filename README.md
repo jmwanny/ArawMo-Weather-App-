@@ -69,7 +69,7 @@ ArawMo! uses a weather API to fetch:
 ## Background Music
 
 - "Bossa Nova Jazz Piano – Summer Cafe Podcast Music" by Denis Pavlov, from [Pixabay Music](https://pixabay.com/music/search/?q=bossa+nova+summer+cafe)
-- 
+  
 ---
 ## License 📄
 
