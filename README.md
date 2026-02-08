@@ -66,7 +66,11 @@ ArawMo! uses a weather API to fetch:
 > Make sure your API key is correctly set in `weatherApi.js` if you are running locally or deploying on Vercel.
 
 ---
+## Background Music
 
+- "Bossa Nova Jazz Piano – Summer Cafe Podcast Music" by Denis Pavlov, from [Pixabay Music](https://pixabay.com/music/search/?q=bossa+nova+summer+cafe)
+- 
+---
 ## License 📄
 
 This project is **MIT licensed**.  
@@ -75,7 +79,7 @@ This project is **MIT licensed**.
 
 ## Author ✍️
 
-**Your Name** - [GitHub Profile](https://github.com/jmwanny)
+**Juan Miguel Austria** - [GitHub Profile](https://github.com/jmwanny)
 
 ---
 
