@@ -80,7 +80,6 @@
    updateTheme(hour);
   
   renderDefaultPage();
-  initBackgroundMusic();
   setTimeout(() => {
     showGreetingSections();
     renderQuestionHTML()

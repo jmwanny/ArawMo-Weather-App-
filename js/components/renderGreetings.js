@@ -1,4 +1,5 @@
 import {hideGreetingSections } from "./uiHelpers.js";
+import { initBackgroundMusic } from "../../music/music.js";
 
 export function renderQuestionHTML ()  {
  let question = document.querySelector('.greetings');
@@ -50,5 +51,6 @@ function renderGreetingsHTML (name) {
 
   button.addEventListener('click', () => {
     hideGreetingSections();
+    initBackgroundMusic();
   });
 }

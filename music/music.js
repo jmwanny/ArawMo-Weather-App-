@@ -2,16 +2,20 @@
 export function initBackgroundMusic () {
   const bgMusic = document.getElementById("bgMusic");
   const muteButton = document.getElementById('muteButton');
-  const icon = document.querySelector("i");
-  
+
+  bgMusic.play();
   bgMusic.volume = 0.4;
   bgMusic.muted = false;
-
   
- muteButton.addEventListener('click', () => {
- bgMusic.muted = !bgMusic.muted;
 
-  icon.classList.toggle("fa-volume-xmark");
-  icon.classList.toggle("fa-volume-high");
+ muteButton.addEventListener('click', () => {
+  
+  if(bgMusic.paused) {
+    bgMusic.play();
+    muteButton.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  } else {
+    bgMusic.pause();
+    muteButton.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+  }
  })
 }
