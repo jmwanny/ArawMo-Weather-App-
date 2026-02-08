@@ -1,5 +1,9 @@
 # ArawMo! 🌤️
 
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
 ArawMo! is a **cute and cozy weather web app** built with **vanilla HTML, CSS, and JavaScript**. It provides real-time weather information from a weather API, along with fun and interactive features to make checking the weather enjoyable.  
 
 ---
@@ -33,11 +37,47 @@ You can see the live version of ArawMo! here: [https://araw-mo-weather-app.verce
 
 ---
 
-## Installation 🛠️
+## Usage 💻
 
-To run ArawMo! locally:
+- Type a city in the search bar to fetch the weather.  
+- Click on any day in the 7-day forecast to view that day’s weather details.  
+- Use the **mute/unmute button** to control background music.  
+- The theme automatically changes depending on the time of day.  
 
-1. Clone the repository:
+---
 
-```bash
-git clone https://github.com/yourusername/arawmo.git
+## Technologies Used 💻
+
+- **HTML5** – structure of the app  
+- **CSS3** – styling and responsive design  
+- **JavaScript (ES6)** – interactivity and API fetching  
+- **Fetch API** – retrieving weather data from the weather API  
+
+---
+
+## API ⚡
+
+ArawMo! uses a weather API to fetch:
+
+- Current weather data  
+- 7-day forecast  
+- 3-hour interval forecast  
+
+> Make sure your API key is correctly set in `weatherApi.js` if you are running locally or deploying on Vercel.
+
+---
+
+## License 📄
+
+This project is **MIT licensed**.  
+
+---
+
+## Author ✍️
+
+**Your Name** - [GitHub Profile](https://github.com/jmwanny)
+
+---
+
+**Enjoy cozy weather updates with ArawMo! ☀️🌙**
+
