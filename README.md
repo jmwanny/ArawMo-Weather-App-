@@ -51,7 +51,9 @@ You can see the live version of ArawMo! here: [https://araw-mo-weather-app.verce
 - **HTML5** – structure of the app  
 - **CSS3** – styling and responsive design  
 - **JavaScript (ES6)** – interactivity and API fetching  
-- **Fetch API** – retrieving weather data from the weather API  
+- **Fetch API** – retrieving weather data from the weather API
+- **Animate On Scroll (AOS)** – smooth scroll-based animations
+- **Vercel** – deployment and hosting
 
 ---
 
